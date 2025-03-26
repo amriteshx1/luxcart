@@ -1,7 +1,8 @@
-
+import './App.css';
+import Nav from './components/Nav/Nav.jsx';
 function App (){
   return(
-    <h1>Hiiii, let's start the fun!</h1>
+    <Nav />
   ) 
 }
 
