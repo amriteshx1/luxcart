@@ -1,26 +1,28 @@
 .navCnt{
     height: 10vh;
     width: 100%;
-    font-family: serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    padding-left: 8vw;
+    padding-right: 8vw;
 }
 .logo{
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 .pages{
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 1vw;
 }
 .cart{
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
