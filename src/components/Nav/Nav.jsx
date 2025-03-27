@@ -1,19 +1,36 @@
 import { Link } from "react-router-dom";
 import styles from './Nav.module.css';
+import CartLogo from '../../assets/cartLogo.png';
+import homeLogo from '../../assets/homeLogo.png';
+import shopLogo from '../../assets/shopLogo.png';
+import aboutLogo from '../../assets/aboutLogo.png';
 
 function Nav(){
     return (
         <div className={styles.navCnt}>
             <div className={styles.logo}>
-                <p>Logo</p>
+                <p>LuxeCart 🟢</p>
             </div>
             <div className={styles.pages}>
-                <Link to="/">Home</Link>
-                <Link to="/shop">Shop</Link>
-                <Link to="/about">About</Link>
+                <Link to="/" className={styles.nav}>
+                <img src={homeLogo} alt="home-logo" />
+                Home
+                </Link>
+
+                <Link to="/shop" className={styles.nav}>
+                <img src={shopLogo} alt="shop-logo" />
+                Shop
+                </Link>
+
+                <Link to="/about" className={styles.nav}>
+                <img src={aboutLogo} alt="about-logo" />
+                About
+                </Link>
             </div>
             <div className={styles.cart}>
-                <Link to="/cart">Cart</Link>
+                <Link to="/cart" className={styles.nav}>
+                <img src={CartLogo} alt="cart-logo" />
+                </Link>
             </div>
         </div>
     )
