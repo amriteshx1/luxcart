@@ -34,14 +34,14 @@
     align-items: center;
     gap: 5px;
     font-size: 1.2vw;
-    font-weight: 300;
+    font-weight: 400;
     color: black;
 }
-img{
+.sublogo{
     height: 20px;
     width: 20px;
 }
-p{
+.logo p{
     font-size: 2vw;
     font-weight: 400;
 }

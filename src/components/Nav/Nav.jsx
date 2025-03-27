@@ -13,23 +13,23 @@ function Nav(){
             </div>
             <div className={styles.pages}>
                 <Link to="/" className={styles.nav}>
-                <img src={homeLogo} alt="home-logo" />
+                <img src={homeLogo} alt="home-logo" className={styles.sublogo}/>
                 Home
                 </Link>
 
                 <Link to="/shop" className={styles.nav}>
-                <img src={shopLogo} alt="shop-logo" />
+                <img src={shopLogo} alt="shop-logo" className={styles.sublogo} />
                 Shop
                 </Link>
 
                 <Link to="/about" className={styles.nav}>
-                <img src={aboutLogo} alt="about-logo" />
+                <img src={aboutLogo} alt="about-logo" className={styles.sublogo} />
                 About
                 </Link>
             </div>
             <div className={styles.cart}>
                 <Link to="/cart" className={styles.nav}>
-                <img src={CartLogo} alt="cart-logo" />
+                <img src={CartLogo} alt="cart-logo" className={styles.sublogo} />
                 </Link>
             </div>
         </div>
