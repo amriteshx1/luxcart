@@ -1,0 +1,47 @@
+.mainCnt{
+    height: 150vh;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 8vw;
+    padding-right: 8vw;
+}
+.aboutHeading{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw;
+    font-weight: 400;
+}
+.cnt{
+    height: 45vh;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.miniCnt{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.header{
+    font-size: 2vw;
+    font-weight: 400;
+}
+.txt{
+    font-size: 1.2vw;
+    font-weight: 400;
+}
+.photo{
+    height: 70%;
+    object-fit: cover;
+}
