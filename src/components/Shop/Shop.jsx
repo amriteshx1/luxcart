@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useOutletContext } from "react-router-dom";
 import styles from './Shop.module.css';
 import Spinner from '../Spinner/Spinner.jsx';
@@ -8,6 +8,7 @@ function Shop(){
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const { cart, setCart } = useOutletContext();
+    const inputRefs = useRef([]);
 
 
     async function fetchData(){
@@ -46,15 +47,16 @@ function Shop(){
         fetchData()
     }, []);
 
-    function handleClick(event, product){
+    function handleClick(event, product, index){
         event.preventDefault();
-    
+
+        const quantity = parseInt(inputRefs.current[index]?.value) || 1;
         const existingItem = cart.find(item => item.id === product.id);
 
         if (existingItem) {
             navigate("/cart");
         } else {
-            setCart([...cart, { ...product, quantity: 1 }]); 
+            setCart([...cart, { ...product, quantity}]); 
             event.target.textContent = "Go to Cart";
         }
     }
@@ -70,7 +72,8 @@ function Shop(){
                 <div className={styles.loader}>Loading...</div> 
                 </div>
             ) : (
-            dataArr.map((el) => (
+            dataArr.map((el, index) => {
+                return (
                 <div className={styles.cnt} key={el.id}>
 
                     <div className={styles.productImg}>
@@ -88,16 +91,19 @@ function Shop(){
 
                     <div className={styles.miniCnt}>
                         <div className={styles.quantity}>
-                            <input type="number" step="1" min="1" name="quantity" placeholder="1" />
+                            <input ref={(input) => {
+                            if (input) inputRefs.current[index] = input;
+                        }}  type="number" step="1" min="1" name="quantity" defaultValue="1" />
                         </div>
                         <div className={styles.btn}>
-                            <button onClick={(event) => handleClick(event, el)}>
+                            <button onClick={(event) => handleClick(event, el, index)}>
                                 {cart.find(item => item.id === el.id) ? "Go to Cart" : "Add to Cart"}
                             </button>
                         </div>
                     </div>
                 </div>
-            )))}
+                );
+            }))}
 
         </div>
     )
