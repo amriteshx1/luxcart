@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import styles from './Shop.module.css';
 
 function Shop(){
     const [dataArr, setDataArr] = useState([]);
+    const navigate = useNavigate();
 
     async function fetchData(){
         try {
@@ -37,6 +39,17 @@ function Shop(){
         fetchData()
     }, []);
 
+    function handleClick(event){
+        event.preventDefault();
+        const btn = event.target;
+        if (btn.textContent === "Go to Cart") {
+            navigate("/cart"); 
+        } else {
+            btn.textContent = "Go to Cart";
+        }
+
+    }
+
     return (
         <div className={styles.mainCnt}>
             <div className={styles.header}>
@@ -63,7 +76,7 @@ function Shop(){
                             <input type="number" step="1" min="1" name="quantity" placeholder="1" />
                         </div>
                         <div className={styles.btn}>
-                            <button>Add to Cart</button>
+                            <button onClick={(event) => handleClick(event)}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
