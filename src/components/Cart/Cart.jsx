@@ -1,4 +1,5 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
+import { useState } from "react";
 import styles from './Cart.module.css';
 import card from '../../assets/cards.png';
 
@@ -6,6 +7,7 @@ function Cart(){
     const navigate = useNavigate();
     const { cart, setCart } = useOutletContext();
 
+    const [isCheckout, setIsCheckout] = useState(false);
 
     function updateQuantity(productId, amount) {
         const updatedCart = cart.map(item =>
@@ -21,6 +23,19 @@ function Cart(){
         setCart(updatedCart);
     }
 
+    function handleCheckout() {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        setIsCheckout(true);
+        setTimeout(() => {
+            setIsCheckout(false);
+            setCart([]);
+        }, 4000);
+    }
+
 
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = 19.99;
@@ -28,8 +43,17 @@ function Cart(){
     const discount = 0;
     const total = subtotal + shipping + platformFee - discount;
 
+    if (isCheckout) {
+        return (
+            <div className={styles.checkoutScreen}>
+                <h1>Thanks for shopping with us!</h1>
+            </div>
+        );
+    }
+
     return(
         <div className={styles.mainCnt}>
+
             <div className={styles.productCnt}>
                 <p className={styles.header}>Cart</p>
                 {cart.length === 0 ? (
@@ -92,7 +116,7 @@ function Cart(){
                         <p className={styles.txt}>All major credit cards accepted</p>
                     </div>
                 </div>
-                <button className={styles.miniHeader}>Checkout </button>
+                <button className={styles.miniHeader} onClick={handleCheckout}>Checkout </button>
             </div>
 
         </div>
