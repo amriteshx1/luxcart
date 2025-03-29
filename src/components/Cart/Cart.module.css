@@ -17,6 +17,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 2vw;
+    gap: 3vh;
 }
 .billCnt{
     height: 80vh;
@@ -110,4 +111,70 @@
     font-family: inherit;
     border: 1px solid #3A7563;
     cursor: pointer;
+}
+
+
+.cartItem{
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #3A7563;
+    border-radius: 8px;
+    padding: 10px;
+}
+.miniImg{
+    height: 90%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartImage{
+    height: 70%;
+    width: 80%;
+    object-fit: cover;
+}
+.cartDetails{
+    height: 90%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+.cartDetails p, .quantityControl span{
+    font-size: 1vw;
+    font-weight: 400;
+}
+.quantityControl{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.quantityControl button{
+    width: 10%;
+    border-radius: 5px;
+    border: 2px solid #3A7563;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: #3A7563;
+    color: white;
+}
+.removeBtn{
+    width: 30%;
+    font-weight: 1.3vw;
+    font-weight: 400;
+    font-family: inherit;
+    border-radius: 5px;
+    border: 2px solid #3A7563;
+    cursor: pointer;
+    background-color: #3A7563;
+    color: white;
 }
