@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import styles from './Shop.module.css';
 
 function Shop(){
     const [dataArr, setDataArr] = useState([]);
     const navigate = useNavigate();
+    const { cart, setCart } = useOutletContext();
 
     async function fetchData(){
         try {
@@ -39,15 +40,17 @@ function Shop(){
         fetchData()
     }, []);
 
-    function handleClick(event){
+    function handleClick(event, product){
         event.preventDefault();
-        const btn = event.target;
-        if (btn.textContent === "Go to Cart") {
-            navigate("/cart"); 
-        } else {
-            btn.textContent = "Go to Cart";
-        }
+    
+        const existingItem = cart.find(item => item.id === product.id);
 
+        if (existingItem) {
+            navigate("/cart");
+        } else {
+            setCart([...cart, { ...product, quantity: 1 }]); 
+            event.target.textContent = "Go to Cart";
+        }
     }
 
     return (
@@ -76,7 +79,9 @@ function Shop(){
                             <input type="number" step="1" min="1" name="quantity" placeholder="1" />
                         </div>
                         <div className={styles.btn}>
-                            <button onClick={(event) => handleClick(event)}>Add to Cart</button>
+                            <button onClick={(event) => handleClick(event, el)}>
+                                {cart.find(item => item.id === el.id) ? "Go to Cart" : "Add to Cart"}
+                            </button>
                         </div>
                     </div>
                 </div>
