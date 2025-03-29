@@ -103,3 +103,17 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: 1; 
     cursor: pointer;
 }
+
+.loading{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.loader{
+    font-weight: 500;
+    font-size: 1.5vw;
+}

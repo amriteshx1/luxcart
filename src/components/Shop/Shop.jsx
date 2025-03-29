@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useOutletContext } from "react-router-dom";
 import styles from './Shop.module.css';
+import Spinner from '../Spinner/Spinner.jsx';
 
 function Shop(){
     const [dataArr, setDataArr] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const { cart, setCart } = useOutletContext();
 
+
     async function fetchData(){
         try {
+            setLoading(true);
             const response = await fetch('https://fakestoreapi.com/products');
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -33,6 +37,8 @@ function Shop(){
             console.log(fashionAndJewelryProducts);
         } catch (error) {
             console.error('Error fetching data:', error);
+        }finally {
+            setLoading(false); 
         }
     }        
 
@@ -58,7 +64,13 @@ function Shop(){
             <div className={styles.header}>
                 <p>Timeless Elegance: Fashion & Jewelry</p>
             </div>
-            {dataArr.map((el) => (
+            {loading ? (
+                <div className={styles.loading}>
+                <Spinner />
+                <div className={styles.loader}>Loading...</div> 
+                </div>
+            ) : (
+            dataArr.map((el) => (
                 <div className={styles.cnt} key={el.id}>
 
                     <div className={styles.productImg}>
@@ -85,7 +97,7 @@ function Shop(){
                         </div>
                     </div>
                 </div>
-            ))}
+            )))}
 
         </div>
     )
