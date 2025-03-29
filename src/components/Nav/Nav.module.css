@@ -1,6 +1,7 @@
 .navCnt{
     height: 10vh;
     width: 100%;
+    background: white;
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-evenly;

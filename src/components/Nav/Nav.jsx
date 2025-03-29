@@ -9,7 +9,7 @@ function Nav(){
     return (
         <div className={styles.navCnt}>
             <div className={styles.logo}>
-                <p>LuxeCart 🟢</p>
+                <p>LuxeCart ⚈</p>
             </div>
             <div className={styles.pages}>
                 <Link to="/" className={styles.nav}>
