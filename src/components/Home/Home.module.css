@@ -28,6 +28,16 @@
     font-weight: 500;
     border: 2px solid #3A7563;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.cnt1 > button:hover {
+    background-color: #2F5D4E;
+    transform: scale(1.05);
+}
+
+.cnt1 > button:active {
+    background-color: #274B40;
+    transform: scale(0.95);
 }
 .cnt2{
     height: 90%;
