@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from './Nav.module.css';
 import CartLogo from '../../assets/cartLogo.png';
 import homeLogo from '../../assets/homeLogo.png';
@@ -12,25 +12,25 @@ function Nav(){
                 <p>LuxeCart ⚈</p>
             </div>
             <div className={styles.pages}>
-                <Link to="/" className={styles.nav}>
-                <img src={homeLogo} alt="home-logo" className={styles.sublogo}/>
-                Home
-                </Link>
+                <NavLink to="/" className={({ isActive }) => isActive ? styles.active : styles.nav}>
+                    <img src={homeLogo} alt="home-logo" className={styles.sublogo} />
+                    Home
+                </NavLink>
 
-                <Link to="/shop" className={styles.nav}>
-                <img src={shopLogo} alt="shop-logo" className={styles.sublogo} />
-                Shop
-                </Link>
+                <NavLink to="/shop" className={({ isActive }) => isActive ? styles.active : styles.nav}>
+                    <img src={shopLogo} alt="shop-logo" className={styles.sublogo} />
+                    Shop
+                </NavLink>
 
-                <Link to="/about" className={styles.nav}>
-                <img src={aboutLogo} alt="about-logo" className={styles.sublogo} />
-                About
-                </Link>
+                <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : styles.nav}>
+                    <img src={aboutLogo} alt="about-logo" className={styles.sublogo} />
+                    About
+                </NavLink>
             </div>
             <div className={styles.cart}>
-                <Link to="/cart" className={styles.nav}>
-                <img src={CartLogo} alt="cart-logo" className={styles.sublogo} />
-                </Link>
+                <NavLink to="/cart" className={({ isActive }) => isActive ? styles.active : styles.nav}>
+                    <img src={CartLogo} alt="cart-logo" className={styles.sublogo} />
+                </NavLink>
             </div>
         </div>
     )

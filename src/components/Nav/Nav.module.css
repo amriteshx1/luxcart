@@ -37,6 +37,24 @@
     font-size: 1.2vw;
     font-weight: 400;
     color: black;
+    padding: 6px;
+    transition: opacity 0.3s ease-in-out;
+}
+.nav:hover{
+    opacity: 0.6;
+}
+.active{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2vw;
+    font-weight: 400;
+    background-color: #DFECE4; 
+    color: black;
+    padding: 6px;
+    border-radius: 7px;
 }
 .sublogo{
     height: 20px;
