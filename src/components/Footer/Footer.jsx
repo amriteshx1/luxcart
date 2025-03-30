@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 import Twitter from '../../assets/twitter.png';
-import Facebook from '../../assets/facebook.png';
-import Instagram from '../../assets/instagram.png';
+import Github from '../../assets/github.png';
+import Discord from '../../assets/discord.png';
 import Linkedin from '../../assets/linkedin.png';
 
 function Footer(){
@@ -31,11 +31,19 @@ function Footer(){
             <div className={styles.cnt4}>
             <p className={styles.header}>Follow Us</p>
             <div className='logo'>
-                <img src={Facebook} alt="facebook" className={styles.smlogo} />
-                <img src={Twitter} alt="twitter" className={styles.smlogo} />
-                <img src={Instagram} alt="instagram" className={styles.smlogo} />
-                <img src={Linkedin} alt="linkedin" className={styles.smlogo} />
-            </div>
+                <a href="https://www.linkedin.com/in/amritesh-gautam?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+                    <img src={Linkedin} alt="LinkedIn" className={styles.smlogo} />
+                </a>
+                <a href="https://x.com/willBeTherex1?t=6KBvNdF6L0nEl0QtQBwhoQ&s=09" target="_blank" rel="noopener noreferrer">
+                    <img src={Twitter} alt="Twitter" className={styles.smlogo} />
+                </a>
+                <a href="https://discord.com/users/1249969004185915508" target="_blank" rel="noopener noreferrer">
+                   <img src={Discord} alt="Discord" className={styles.smlogo} />
+                </a>
+                <a href="https://github.com/amriteshx1" target="_blank" rel="noopener noreferrer">
+                   <img src={Github} alt="GitHub" className={styles.smlogo} />
+                </a>
+                </div>
             </div>
         </div>
     )

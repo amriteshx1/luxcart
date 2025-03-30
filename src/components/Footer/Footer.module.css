@@ -21,14 +21,25 @@
     font-size: 1.2vw;
     font-weight: 450;
     color: black;
+    cursor: default;
 }
-.subHeading{
+.subheading{
     font-size: 1vw;
-    font-weight: 250;
-    color: darkgray;
+    font-weight: 400;
+    color: #222;
+}
+.subheading:hover{
+    color: #3A7563; 
+    cursor: default;
 }
 .smlogo{
     height: 30px;
     width: 30px;
     margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+.smlogo:hover {
+    transform: scale(1.1); 
+    opacity: 0.9;
 }
