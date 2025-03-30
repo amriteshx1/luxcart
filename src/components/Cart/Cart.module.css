@@ -1,3 +1,14 @@
+@keyframes fadeInUp {
+    from {
+      opacity: 0; 
+      transform: translateY(10px); 
+    }
+    to {
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
 .mainCnt{
     min-height: 90vh;
     width: 100%;
@@ -8,6 +19,7 @@
     padding-left: 8vw;
     padding-right: 8vw;
     gap: 5%;
+    animation: fadeInUp 0.3s ease-in-out;
 }
 .productCnt{
     min-height: 80vh;
