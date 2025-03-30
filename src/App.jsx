@@ -9,7 +9,7 @@ function App (){
   const [cart, setCart] = useState([]);
   return(
     <>
-    <Nav />
+    <Nav cart={cart} />
     <Outlet context={{ cart, setCart }} />
     <Footer />
     </>

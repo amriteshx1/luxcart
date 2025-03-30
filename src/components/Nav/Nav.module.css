@@ -27,6 +27,16 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
+}
+.cartDot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #3A7563;
+    border-radius: 50%;
 }
 .nav{
     text-decoration: none;
