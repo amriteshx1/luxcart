@@ -80,7 +80,7 @@
     border-radius: 8px;
     font-family: inherit;
     border: 1px solid #3A7563;
-    cursor: pointer;
+    cursor: not-allowed;
 }
 .payment{
     height: 20%;
@@ -111,6 +111,15 @@
     font-family: inherit;
     border: 1px solid #3A7563;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.billCnt > button:hover {
+    background-color: #2F5D4E;
+    transform: scale(1.05);
+}
+.billCnt > button:active {
+    background-color: #274B40;
+    transform: scale(0.95);
 }
 
 
@@ -177,6 +186,26 @@
     cursor: pointer;
     background-color: #3A7563;
     color: white;
+    transition: all 0.2s ease-in-out;
+}
+.removeBtn:hover{
+    background-color: #2F5D4E;
+    transform: scale(1.05);
+}
+.removeBtn:active {
+    background-color: #274B40;
+    transform: scale(0.95);
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .checkoutScreen {
@@ -188,4 +217,8 @@
     align-items: center;
     font-size: 2vw;
     font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #3A7563;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeSlide 0.7s ease-in-out;
 }

@@ -33,7 +33,7 @@ function Cart(){
         setTimeout(() => {
             setIsCheckout(false);
             setCart([]);
-        }, 4000);
+        }, 2300);
     }
 
 
