@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, NavLink } from "react-router-dom";
 import { useState } from "react";
 import styles from './Cart.module.css';
 import card from '../../assets/cards.png';
@@ -57,7 +57,9 @@ function Cart(){
             <div className={styles.productCnt}>
                 <p className={styles.header}>Cart</p>
                 {cart.length === 0 ? (
-                    <p className={styles.emptyCart}>Your cart is empty.</p>
+                    <p className={styles.emptyCart}>
+                        Your cart is empty, <NavLink to="/shop" className={styles.shopNow}>Shop Now!</NavLink>
+                        </p>
                 ) : (
                     cart.map((item) => (
                         <div className={styles.cartItem} key={item.id}>

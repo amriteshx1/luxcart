@@ -208,6 +208,15 @@
     background-color: #274B40;
     transform: scale(0.95);
 }
+.emptyCart, .shopNow{
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+.shopNow {
+    color: #3A7563;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 @keyframes fadeSlide {
     from {
