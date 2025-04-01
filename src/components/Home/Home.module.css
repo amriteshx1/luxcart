@@ -64,5 +64,42 @@
 }
 .homeImg{
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
+}
+
+/*Responsiveness*/
+/*Tablets*/
+
+@media (min-width: 500px) and (max-width: 1100px){
+    .mainCnt{
+        flex-direction: column;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+    .cnt1 p{
+        font-size: 2.9vh;
+    }
+    .cnt1 > button{
+        height: 5vh;
+        width: 30%;
+        align-self: flex-start;
+        font-size: 1.7vh;
+    }
+    .cnt1{
+        height: 40%;
+        width: 60%;
+        justify-content: flex-end;
+        align-items: center;
+        order: 1;
+    }
+    .cnt2{
+        height: 60%;
+        width: 100%;
+        order: 2;
+        align-items: flex-start;
+    }
+    .homeImg{
+        height: 80%;
+    }
 }
