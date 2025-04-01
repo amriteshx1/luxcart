@@ -94,3 +94,38 @@
         max-width: 100%;
     }
 }
+
+/*Mobile*/
+@media (max-width: 499px){
+    .mainCnt{
+        height: 125vh;
+        justify-content: space-evenly;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        gap: 2.5vh;
+    }
+    .cnt{
+        height: 35vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .miniCnt{
+        height: 55%;
+        width: 70%;
+    }
+    .aboutHeading{
+        height: 10vh;
+        font-size: 2.2vh;
+    }
+    .header{
+        font-size: 2vh;
+    }
+    .txt{
+        font-size: 1.4vh;
+    }
+    .photo{
+        height: 45%;
+        max-width: 100%;
+    }
+}
