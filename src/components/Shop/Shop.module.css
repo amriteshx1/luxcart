@@ -177,13 +177,16 @@ input[type="number"]::-webkit-outer-spin-button {
     .btn button{
         font-size: 1.2vh;
     }
+    .loading{
+        height: 80vh;
+    }
 }
 
 /*Mobile*/
 @media (max-width: 499px){
     .mainCnt{
-        padding-left: 3vw;
-        padding-right: 3vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
     .header{
         height: 10vh;
@@ -210,5 +213,8 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .btn button{
         font-size: 1.2vh;
+    }
+    .loading{
+        height: 80vh;
     }
 }

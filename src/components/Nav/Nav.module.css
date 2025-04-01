@@ -31,8 +31,7 @@
 }
 .cartDot {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 1px;
     width: 8px;
     height: 8px;
     background-color: #3A7563;
@@ -125,7 +124,7 @@
         font-size: 1.8vh;
     }
     .logo p{
-        font-size: 2vh;
+        font-size: 1.9vh;
     }
     .navHead{
         display: none;
