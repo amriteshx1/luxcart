@@ -178,3 +178,37 @@ input[type="number"]::-webkit-outer-spin-button {
         font-size: 1.2vh;
     }
 }
+
+/*Mobile*/
+@media (max-width: 499px){
+    .mainCnt{
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+    .header{
+        height: 10vh;
+        font-size: 2.2vh;
+    }
+    .cnt{
+        width: 40%;
+        height: calc(270vh / 7.6 * 0.9);
+    }
+    .title p{
+        font-size: 1.2vh;
+    }
+    .miniCnt p{
+        font-size: 1.2vh;
+    }
+    .quantity{
+        margin-right: 20%;
+    }
+    .quantity input{
+        font-size: 1vh;
+    }
+    .btn{
+        width: 60%;
+    }
+    .btn button{
+        font-size: 1.2vh;
+    }
+}
